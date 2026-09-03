@@ -7,6 +7,7 @@ map("n", "<leader>e", vim.cmd.Ex)
 map("n", "<leader>ff", function() require("telescope.builtin").find_files() end, { desc = "Find files" })
 map("n", "<leader>fg", function() require("telescope.builtin").live_grep() end, { desc = "Live grep" })
 map("n", "<leader>fb", function() require("telescope.builtin").buffers() end, { desc = "Buffers" })
+map("n", "<leader>fe", function() require("telescope.builtin").oldfiles() end, { desc = "Buffers" })
 
 -- undotree
 map("n", "<leader>u", vim.cmd.UndotreeToggle)
