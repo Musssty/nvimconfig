@@ -28,3 +28,5 @@ vim.keymap.set("n", "<C-Right>", "<C-w>l")
 
 -- diagnostics
 map("n", "<leader>E", vim.diagnostic.open_float)
+
+vim.keymap.set('n', '<leader>(', 'ciw(<C-r>")<Esc>', { desc = 'Wrap word in parens' })

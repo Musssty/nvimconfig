@@ -23,3 +23,18 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
+
+-- C/C++ indenting (tabs, width 8 — Linux-kernel style, matches SalarAlo's config)
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "c", "cpp" },
+    callback = function(args)
+        local bo = vim.bo[args.buf]
+        bo.tabstop = 8
+        bo.shiftwidth = 8
+        bo.expandtab = false
+        bo.autoindent = true
+        bo.smartindent = true
+        bo.copyindent = true
+        bo.preserveindent = true
+    end,
+})

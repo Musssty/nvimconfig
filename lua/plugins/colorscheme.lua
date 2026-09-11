@@ -1,10 +1,13 @@
 -- lua/plugins/colorscheme.lua
-return
-{
-    'AlexvZyl/nordic.nvim',
+return {
+    "oskarnurm/koda.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-        require('nordic').load()
-    end
+        require("koda").setup({
+            transparent = false,
+        })
+
+        vim.cmd("colorscheme koda")
+    end,
 }

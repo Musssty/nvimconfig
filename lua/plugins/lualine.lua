@@ -4,8 +4,9 @@ return {
     config = function()
         require('lualine').setup({
             options = {
-                theme = 'nordic', -- since you're using nordic.nvim
+                theme = 'auto',
             }
         })
     end
 }
+
