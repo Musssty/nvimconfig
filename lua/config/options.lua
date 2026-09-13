@@ -24,7 +24,7 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 
--- C/C++ indenting (tabs, width 8 — Linux-kernel style, matches SalarAlo's config)
+-- need to figure out why i still need a file in project directory with these rules in there 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "c", "cpp" },
     callback = function(args)

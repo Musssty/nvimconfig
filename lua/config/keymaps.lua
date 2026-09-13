@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 vim.g.mapleader = " "
-map("n", "<leader>e", vim.cmd.Ex)
+-- map("n", "<leader>e", vim.cmd.Ex)
 
 -- telescope
 map("n", "<leader>ff", function() require("telescope.builtin").find_files() end, { desc = "Find files" })
@@ -29,4 +29,10 @@ vim.keymap.set("n", "<C-Right>", "<C-w>l")
 -- diagnostics
 map("n", "<leader>E", vim.diagnostic.open_float)
 
-vim.keymap.set('n', '<leader>(', 'ciw(<C-r>")<Esc>', { desc = 'Wrap word in parens' })
+
+-- Java keymaps
+vim.keymap.set('n', '<leader>jr', '<cmd>JavaRunnerRunMain<CR>', { desc = 'Java: Run main' })
+
+
+-- Oil 
+vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Open Oil in a float" })
