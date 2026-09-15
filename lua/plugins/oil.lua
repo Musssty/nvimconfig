@@ -1,38 +1,25 @@
 return {
   {
-    "nvim-mini/mini.files",
-    version = false,
+    "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    lazy = false,
     opts = {
-      mappings = {
-        go_in       = "<Right>",
-        go_in_plus  = "<CR>",
-        go_out      = "<Left>",
-        go_out_plus = "<S-Left>",
+      default_file_explorer = true,
+      columns = { "icon" },
+      view_options = {
+        show_hidden = true,
       },
-      windows = {
-        preview = true,
-        width_preview = 40,
+      keymaps = {
+        ["<CR>"] = "actions.select",
+        ["<Right>"] = "actions.select",
+        ["<Left>"] = "actions.parent",
+        ["q"] = "actions.close",
+        ["gp"] = "actions.preview",
       },
     },
     keys = {
-      {
-        "<leader>e",
-        function()
-          local mf = require("mini.files")
-          if not mf.close() then
-            mf.open(vim.api.nvim_buf_get_name(0), true)
-          end
-        end,
-        desc = "File explorer (current file)",
-      },
-      {
-        "<leader>E",
-        function()
-          require("mini.files").open(vim.uv.cwd(), true)
-        end,
-        desc = "File explorer (cwd)",
-      },
+      { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
+      { "<leader>e", "<cmd>Oil<cr>", desc = "File explorer (oil)" },
     },
   },
 }

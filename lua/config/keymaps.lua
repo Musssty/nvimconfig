@@ -28,7 +28,3 @@ vim.keymap.set("n", "<C-Right>", "<C-w>l")
 
 -- diagnostics
 map("n", "<leader>E", vim.diagnostic.open_float)
-
-
--- -- Oil 
--- vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Open Oil in a float" })
