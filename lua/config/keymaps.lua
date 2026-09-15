@@ -30,9 +30,5 @@ vim.keymap.set("n", "<C-Right>", "<C-w>l")
 map("n", "<leader>E", vim.diagnostic.open_float)
 
 
--- Java keymaps
-vim.keymap.set('n', '<leader>jr', '<cmd>JavaRunnerRunMain<CR>', { desc = 'Java: Run main' })
-
-
--- Oil 
-vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Open Oil in a float" })
+-- -- Oil 
+-- vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "Open Oil in a float" })
