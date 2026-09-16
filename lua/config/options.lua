@@ -12,21 +12,21 @@ vim.opt.numberwidth = 4
 vim.opt.smartindent = true
 vim.opt.indentexpr = ""
 
+vim.opt.wrap = false
+
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 
--- need to figure out why i still need a file in project directory with these rules in there 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "c", "cpp" },
+    pattern = { "c", "cpp", "lua" },
     callback = function(args)
         local bo = vim.bo[args.buf]
         bo.tabstop = 8
@@ -38,3 +38,4 @@ vim.api.nvim_create_autocmd("FileType", {
         bo.preserveindent = true
     end,
 })
+
